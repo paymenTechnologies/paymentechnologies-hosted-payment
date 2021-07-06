@@ -3,18 +3,18 @@
 
 function hashText($data)
 {
+    // replace with your secret key
+    $secret_key = '602681150d5a80.90373291';
+
     $str_data = '';
     foreach ($data as $key => $val) {
         if($key != 'customerip'){
-            if($key != 'secret_key') {
-                $str_data .= $val.'|';
-                } else {
-                    $str_data .= $val;
-                }
+            $str_data .= $val.'|';
         }
     }
     
-    $output = hash ("sha512", $str_data);
+    //append secret key
+    $output = hash ("sha512", $str_data.$secret_key);
 
     return $output;
 }

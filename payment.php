@@ -10,7 +10,7 @@ class Payment {
 
     public function __construct($payment, $api_type = "API") {
         $this->payment = $payment;
-        $this->api_url = 'https://pay.paymentechnologies.co.uk/authorize_request';
+        $this->api_url = 'https://api.paymentechnologies.co.uk/v2/hosted-request';
     }
 
     function Pay()
